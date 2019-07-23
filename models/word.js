@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 
 const wordSchema = new Schema({
     word: { 
-        type: String, required: true
+        type: String, 
+        required: true
+    },
+    link: {
+        type: String, 
+        required: true
     }
 });
 
