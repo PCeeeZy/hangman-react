@@ -24,6 +24,36 @@ class Home extends Component {
             wins: 0,
             losses: 0
         });
+        document.addEventListener("keyup", this.onKeyUp, false)
+    }
+
+    componentWillUnmount = () =>{
+        document.removeEventListener("keyup", this.onKeyUp, false);
+    }
+
+    onKeyUp = (event) => {
+        let guess = event.onkeyup;
+        //make sure guess is a letter
+        if (guess === [a-zA-Z]) {
+            this.checkGuess(guess)
+        };
+    }
+
+    checkGuess = (guess) => {
+        // has it been guessed?
+            // if yes ignore
+            // if no add to guessed letters
+                // is this letter apart of word?
+                    // yes
+                        // is the word completed?
+                            // yes
+                            // no
+                    // no
+                        // increment wrong guesses
+                        // check if lost
+                            // lost
+                                // increment loss, reset majority state
+                            // still in
     }
 
     newGame = () => {
